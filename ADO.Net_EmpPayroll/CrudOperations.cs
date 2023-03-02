@@ -41,6 +41,24 @@ namespace ADO.Net_EmpPayroll
             }
         }
 
+        public void CreateEmployeeData()
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = "INSERT INTO Payroll Values('Kartik','Maharashtra', 60000, '97456773')";
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                command.CommandType = System.Data.CommandType.Text;
+                int result = command.ExecuteNonQuery();
+                string message = result == 1 ? "Row inserted successfully" : "Row insert failed";
+                Console.WriteLine(message);
+
+                connection.Close();
+                Console.ReadKey();
+            }
+        }
+
 
     }
 }

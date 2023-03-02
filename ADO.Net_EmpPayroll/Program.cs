@@ -9,8 +9,9 @@ namespace ADO.Net_EmpPayroll
             Console.WriteLine("Welcome to ADO.net Employee payroll system");
             //Read Operation
 
-            //CrudOperations crud = new CrudOperations();
+            CrudOperations crud = new CrudOperations();
             //crud.ReadEmployeeData();
+            crud.CreateEmployeeData();
 
         }
     }
